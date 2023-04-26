@@ -1,7 +1,7 @@
 # End-To-End-ML-Project-With-Deployment
 A series of e2e ML project deployed using various platforms
 
-##Process 
+## Processes 
 1. Data Ingestion
 2. Data Transformation
 3. Model Trainer
