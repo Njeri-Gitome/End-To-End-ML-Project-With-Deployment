@@ -1,4 +1,5 @@
 import sys
+import logging
 
 #Exceptions - a type of error that occurs when a syntactically correct Python code raises an error
 #sys module in Python provides various functions and variables that are used to manipulate different parts of the Python runtime environment.
@@ -20,9 +21,18 @@ def error_message_detail(error,error_detail:sys):
     
 class CustomException(Exception): # The class inherits the parent exception that was defined in the function above
     def __init__(self, error_message, error_detail:sys ):
-        super.__init__(error_message)
+        super().__init__(error_message)
         self.error_message = error_message_detail(error_message, error_detail= error_detail)
         
     def __str__(self):
         return self.error_message
     
+    
+#To check if the logger.py file is working
+if __name__ =="main":
+    
+    try:
+        a = 1/0
+    except Exception as e:
+        logging.info('Divide by zero error')
+        raise CustomException(e,sys)
